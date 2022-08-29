@@ -13515,6 +13515,8 @@ op_db: List[OpInfo] = [
                # Empty tensor data is garbage so it's hard to make comparisons with it.
                DecorateInfo(unittest.skip("Skipped!"), 'TestCommon', 'test_complex_half_reference_testing'),
                # Empty tensor data is garbage so it's hard to make comparisons with it.
+               DecorateInfo(unittest.skip("Skipped!"), 'TestTorchFunctionRedispatchOps', 'test_redispatch'),
+               # Empty tensor data is garbage so it's hard to make comparisons with it.
                DecorateInfo(unittest.skip("Skipped!"), 'TestCommon', 'test_non_standard_bool_values'),
                DecorateInfo(unittest.skip("Expected: empty_like is not comparable"), 'TestCompositeCompliance',
                             'test_operator'),
@@ -13628,6 +13630,8 @@ op_db: List[OpInfo] = [
                             'test_operator'),
                DecorateInfo(unittest.skip("Expected: new_empty is not comparable"),
                             'TestCommon', 'test_complex_half_reference_testing'),
+               # Empty tensor data is garbage so it's hard to make comparisons with it.
+               DecorateInfo(unittest.skip("Skipped!"), 'TestTorchFunctionRedispatchOps', 'test_redispatch'),
            ),
            supports_autograd=False),
     OpInfo('new_empty_strided',
@@ -13677,6 +13681,8 @@ op_db: List[OpInfo] = [
                             'TestCudaFuserOpInfo', 'test_nvfuser_extremal_values'),
                DecorateInfo(unittest.skip("Expected: new_empty_strided is not comparable"),
                             'TestCudaFuserOpInfo', 'test_nvfuser_correctness'),
+               DecorateInfo(unittest.skip("Expected: new_empty_strided is not comparable"),
+                            'TestTorchFunctionRedispatchOps', 'test_redispatch'),
            )),
     OpInfo('empty',
            dtypes=all_types_and_complex_and(torch.bool, torch.half, torch.bfloat16, torch.chalf),
@@ -13716,6 +13722,8 @@ op_db: List[OpInfo] = [
                             'TestLazyOpInfo'),
                DecorateInfo(unittest.skip("Expected: empty is not comparable"),
                             'TestCommon', 'test_complex_half_reference_testing'),
+               # Empty tensor data is garbage so it's hard to make comparisons with it.
+               DecorateInfo(unittest.skip("Skipped!"), 'TestTorchFunctionRedispatchOps', 'test_redispatch'),
            )),
     OpInfo('eye',
            dtypes=all_types_and_complex_and(torch.bool, torch.half),
